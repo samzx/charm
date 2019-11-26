@@ -1,4 +1,15 @@
-import React, { useState } from 'react';
+import Head from 'next/head'
+
+import Hero from '../components/Hero'
+import Header from '../components/Header'
+import Demonstration from '../components/Demonstration'
+import Features from '../components/Features'
+import Exit from '../components/Exit'
+import Footer from '../components/Footer'
+
+import GoogleAnalytics from  '../components/extras/GoogleAnalytics'
+
+import config from '../config/appConfig'
 
 const AppStyle = () =>
 <style jsx="true">{`
@@ -7,101 +18,69 @@ const AppStyle = () =>
     margin: 0;
     font-family: -apple-system,system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
   }
+  a {
+    color: #fbf4f0;
+    text-decoration: none;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .title-container {
+    max-width: 600px;
+    margin: auto;
+  }
   .section {
-    height: 800px;
     display: flex;
   }
   .section-container {
-    width: 1462px;
-    margin: auto;
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10px;
   }
-  h1 {
-    font-size: 28px;
+
+  @media only screen and (max-width: 974px) {
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 24px;
+    }
   }
-  h2 {
-    font-size: 62px;
+  @media only screen and (min-width: 974px) {
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 62px;
+    }
+    h3 {
+      font-size: 32px;
+    }
   }
 `}</style>
 
-const Header = () =>
-<div className="section" style={{height: "inherit"}}>
-  <div className="section-container">
-    <h1>I am a Header</h1>
-  </div>
-</div>
-
-const Hero = () => {
-
-  const [counter, setCounter] = useState(0)
-  const [input, setInput] = useState('')
-
-  return (  
-    <div className="section">
-      <div className="section-container">
-        <h2>I am a Hero</h2>
-        <h1>Requests sent: {counter}</h1>
-        <form onSubmit={(event) => {
-            event.preventDefault()
-            if (input) {
-              fetch(`http://localhost:3000/?input=${input}`).then((resp) => console.log(resp))
-              setCounter(counter + 1)
-              setInput('')
-              document.activeElement.blur();
-            } else {
-              document.getElementById("email-input").focus()
-              return
-            }
-
-          }}>
-          <label htmlFor="email-input" style={{display: "block"}}>Early access invitations are rolling out soon — get on the waitlist!</label>
-          <input type="email" id="email-input" value={input} onChange={(event) => setInput(event.target.value)}/>
-          <button>
-            Click me!
-          </button>
-        </form>
-      </div>
-    </div>
-  )
-}
-
-const Demonstration = () =>
-<div className="section">
-  <div className="section-container">
-    <h2>I am a Demonstration</h2>
-  </div>
-</div>
-
-const Features = () =>
-<div className="section">
-  <div className="section-container">
-    <h2>I am a Features</h2>
-  </div>
-</div>
-
-const Exit = () =>
-<div className="section">
-  <div className="section-container">
-    <h2>I am an Exit</h2>
-  </div>
-</div>
-
-const Footer = () =>
-<div className="section" style={{height: "200px", background: "black"}}>
-  <div className="section-container" style={{color: "white", padding: "50px"}}>
-    <h1>I am a Footer</h1>
-  </div>
-</div>
-
 const Index = () => (
   <div className="app">
+    <Head>
+      <title>{config.title}</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="shortcut icon" href={config.favicon || "/favicon.ico"} />
+    </Head>
     <AppStyle/>
+    { config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId}/>  }
     <div>
-      <Header />
-      <Hero />
-      <Demonstration />
-      <Features />
-      <Exit />
-      <Footer />
+      <Header name={config.appName} />
+      <Hero isMobile={config.isMobile} {...config.hero} Action={config.action} />
+      <Demonstration {...config.demonstration} />
+      <Features {...config.features} />
+      <Exit {...config.exit} Action={config.action} />
+      <Footer {...config.footer} />
     </div>
   </div>
 );
