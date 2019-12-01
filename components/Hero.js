@@ -45,7 +45,8 @@ const MobileHeroImage = ({ image, setShow, show, indicatorColor }) => {
           }
         }
       `}</style>
-      <div ref={wrapperRef} className={ `hero-image--mobile ${show ? "hero-image--mobile__show" : ""}` } style={{ background: `url(${image})`, backgroundSize: "cover", height: 667, maxWidth: 375, borderRadius: "20px" }}>
+      <div ref={wrapperRef} className={ `hero-image--mobile ${show ? "hero-image--mobile__show" : ""}` } style={{ backgroundSize: "cover", maxWidth: 375, borderRadius: "20px" }}>
+        <img src={image} style={{ width: "100%" }} />
         <div onClick={() => setShow(!show)} style={{ cursor: "pointer"}} ><Circle indicatorColor={indicatorColor} /></div>
       </div>
     </div>

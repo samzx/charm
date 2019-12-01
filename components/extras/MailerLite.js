@@ -30,7 +30,7 @@ const buttonStyle = {
 
 const MailerLite = ({ id, dataCode, content }) => {
 
-  const { title, subtitle, successTitle, successSubtitle, buttonText, buttonLoadingText } = content
+  const { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText } = content
 
   // Hides form and shows thank you on success.
   useEffect(() => { attachScriptContent(`function ml_webform_success_${id}(){var r=ml_jQuery||jQuery;r(".ml-subscribe-form-${id} .row-success").show(),r(".ml-subscribe-form-${id} .row-form").hide()}`) }, []);
@@ -79,6 +79,7 @@ const MailerLite = ({ id, dataCode, content }) => {
               <div className="ml-form-embedContent">
                 <h4>{title}</h4>
                 <h3>{subtitle}</h3>
+                <p>{description}</p>
               </div>
               <form className="ml-block-form" action={`https://app.mailerlite.com/webforms/submit/${dataCode}`} data-code={dataCode} method="post" target="_blank">
                 <div style={textFieldContainerStyle} className="ml-form-formContent">

@@ -11,7 +11,7 @@ const Section = ({title, description, image}) =>
 const Demonstration = ({ title, content }) =>
 <div className="section" style={{background: "white"}}>
   <div className={"section-container"}>
-    <div className="title-container" style={{textAlign: "left"}}>
+    <div className="title-container" style={{ textAlign: "left", maxWidth: 720 }}>
       <h2>{title}</h2>
     </div>
     <div style={{maxWidth: 720, margin: "auto"}}>
