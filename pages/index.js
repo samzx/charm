@@ -73,7 +73,7 @@ const Index = () => (
       <link rel="shortcut icon" href={config.favicon || "/favicon.ico"} />
       <meta property="og:title"              content={config.title} />
       <meta property="og:description"        content={config.hero.title} />
-      <meta property="og:image"              content={config.hero.image} />
+      <meta property="og:image"              content={config.appIcon} />
     </Head>
     <AppStyle/>
     { config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId}/>  }
