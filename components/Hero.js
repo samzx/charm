@@ -55,7 +55,8 @@ const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig }) => {
 }
 
 const DesktopHeroImage = ({ image }) =>
-<div style={{ background: `url(${image})`, backgroundSize: "cover", height: "50vw", maxHeight: 720, maxWidth: 1280, margin: "auto", borderRadius: "20px 20px 0 0", }}>
+<div style={{ maxHeight: 720, maxWidth: 1280, margin: "auto", borderRadius: "10px 10px 0 0", overflow: "hidden" }}>
+  <img src={image} style={{ width: "100%", borderRadius: "10px 10px 0 0" }} />
   <div style={{width: "100%"}}/>
 </div>
 
