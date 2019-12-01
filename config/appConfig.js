@@ -1,10 +1,10 @@
 import MailerLite from "./extras/MailerLiteConfig"
 
 const config = {
-  title: "App Name - Light description",
-  favicon: "",
-  appName: "App Name",
-  appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
+  title: "Pocket Panda",
+  favicon: "https://res.cloudinary.com/xielabs/image/upload/v1576245653/pocketpanda.png",
+  appName: "Pocket Panda",
+  appIcon: "https://res.cloudinary.com/xielabs/image/upload/v1576245653/pocketpanda.png",
   isMobile: true,
   action: MailerLite,
   style: {
@@ -15,62 +15,62 @@ const config = {
     actionColor: "#0092ff"
   },
   hero: {
-    title: "Tell us why your customers need you.",
-    image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    title: "Curate your board game collection",
+    image: "https://res.cloudinary.com/xielabs/image/upload/v1576249323/demo-2x.png",
     mobileHeroImageConfig: {
-      jumpHeight: "125"
+      jumpHeight: "120"
     }
   },
   demonstration: {
-    title: "Show us how you'll deliver value.",
+    title: "Don't horde - make the perfect collection",
     content: [
       {
-        title: "Do this first.",
+        title: "Track your game history",
         description: [
-          "Your goal is to let the user understand the value of your product.",
-          "You can start off with the first steps of the user journey."
+          "Input your board game collection. Games you've owned, you've played and the ones you wish you had.",
+          "Play some games then rate it. Input your rankings, and your friends'."
         ],
-        image: "https://pro-cdn.pixelmator.com/pro/experience/1.2/img-experience@2x.jpg"
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576160022/undraw_percentages_0rur.png"
       },
       {
-        title: "Then this second.",
-        description: [
-          "Keep going with the journey while selling your product strengths. Use your customers vocabulary to they understand."
-        ],
-        image: "https://pixelmator-pro.s3.amazonaws.com/pro/layouting/1.3.4/img_layouting@2x.jpg"
-      },
-      {
-        title: "Isn't that amazing?",
+        title: "Discover new board games",
         description:[
-          "This is your last chance. Finish off the journey with a bang!",
-          "Amuse them."
+          "Based on everyone's ratings, our algorithm will recommend you new games to try.",
+          "We'll only recommend games we're confident you'll love."
         ],
-        image: "https://pro-cdn.pixelmator.com/pro/color-adjustments/1.4/img-color-adjustments@2x.jpg"
-      }
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576160050/undraw_treasure_of9i.png"
+      },
+      {
+        title: "Minimise your collection",
+        description: [
+          "We'll detect games that have been sitting on your shelf for a while. Maybe it's time to give it a new life - to someone else.",
+        ],
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576160068/undraw_throw_down_ub2l.png"
+      },
     ]
   },
   features: {
-    title: "List out what your app can do.",
+    title: "You'll get all the tools to get started today",
     content: [
       {
-        title: "First Killer Feature",
-        description: "Explain this killer feature in more detail here. Add some great copy!",
-        image: "http://pixelmator-pro.s3.amazonaws.com/pro/homepage/1.5/whats-new/ico_performance.png"
+        title: "Syncs with Board Game Geek",
+        description: "Import your plays and lists from Board Game Geek. It's that simple to start!",
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576248844/sync.png"
       },
       {
-        title: "The Killer Feature",
-        description: "Explain this killer feature in more detail here. Use customer vocabulary.",
-        image: "http://pixelmator-pro.s3.amazonaws.com/pro/homepage/1.5/whats-new/ico_ml-denoise.png"
+        title: "Personalised recommendations",
+        description: "We've trained our model on the largest database of reviews to deliver the best recommendations.",
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576248946/recommended.png"
       },
       {
-        title: "Last Killer Feature",
-        description: "Explain this killer feature in more detail here. Solve their pain points",
-        image: "http://pixelmator-pro.s3.amazonaws.com/pro/homepage/1.5/whats-new/ico_mac-pro.png"
+        title: "Extensive board game library",
+        description: "We've populated the gaming library from Board Game Geek, so you know you'll have all the latest board games.",
+        image: "https://res.cloudinary.com/xielabs/image/upload/v1576249404/collection.png"
       }
     ]
   },
   exit: {
-    title: "Don't miss out.",
+    title: "Sign up for early access",
     appear: true
   },
   footer: {
