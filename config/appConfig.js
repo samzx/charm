@@ -11,13 +11,13 @@ const config = {
     backgroundColor: "#fbf4f0",
     textColor: "#0f0f0f",
     primaryColor: "#0f0f0f",
-    accentColor: "#fff"
+    accentColor: "#fff",
+    actionColor: "#0092ff"
   },
   hero: {
     title: "Tell us why your customers need you.",
     image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     mobileHeroImageConfig: {
-      indicatorColor: "#0092ff",
       jumpHeight: "125"
     }
   },

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 // Should be faded out 50%
-const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig }) => {
-  const { indicatorColor, jumpHeight } = mobileHeroImageConfig
+const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig, actionColor }) => {
+  const { jumpHeight } = mobileHeroImageConfig
   const wrapperRef = useRef();
   const handleClickOutside = (event) => {
     if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -47,8 +47,8 @@ const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig }) => {
         }
       `}</style>
       <div ref={wrapperRef} className={ `hero-image--mobile ${show ? "hero-image--mobile__show" : ""}` } style={{ backgroundSize: "cover", maxWidth: 375 }}>
-        <img src={image} style={{ width: "100%", borderRadius: "20px" }} />
-        <div onClick={() => setShow(!show)} style={{ cursor: "pointer"}} ><Circle indicatorColor={indicatorColor} /></div>
+        <img src={image} style={{ width: "100%", borderRadius: "40px" }} />
+        <div onClick={() => setShow(!show)} style={{ cursor: "pointer"}} ><Circle indicatorColor={actionColor} /></div>
       </div>
     </div>
   )
@@ -70,7 +70,7 @@ const DesktopContent = ({ image, Action }) =>
   </div>
 </React.Fragment>
 
-const MobileContent = ({ image, setShow, show, Action, mobileHeroImageConfig }) =>
+const MobileContent = ({ image, setShow, show, Action, mobileHeroImageConfig, actionColor }) =>
 <React.Fragment>
   <style>{`
   .mail-list--mobile {
@@ -99,15 +99,18 @@ const MobileContent = ({ image, setShow, show, Action, mobileHeroImageConfig }) 
   <div className="mail-list--mobile mail-list--mobile__top" style={{ marginBottom: 50, filter: show ? "blur(5px)" : ""}}>
     <Action />
   </div>
-  <div style={{ flex: 1 }}>
-    { image && <MobileHeroImage image={image} show={show} setShow={setShow} mobileHeroImageConfig={mobileHeroImageConfig} /> }
-  </div>
+  { image && 
+    <div style={{ flex: 1 }}>
+      <MobileHeroImage image={image} show={show} setShow={setShow} mobileHeroImageConfig={mobileHeroImageConfig} actionColor={actionColor} />
+    </div>
+  }
+
   <div className="mail-list--mobile mail-list--mobile__right" style={{ marginBottom: 100, filter: show ? "blur(5px)" : "" }}>
     <Action />
   </div>
 </React.Fragment>
 
-const Hero = ({ isMobile, title, image, Action, mobileHeroImageConfig }) => {
+const Hero = ({ isMobile, title, image, Action, mobileHeroImageConfig, actionColor }) => {
   const [show, setShow] = useState(false);
   return (
     <div className="section" style={{ minHeight: "inherit" }}>
@@ -116,22 +119,28 @@ const Hero = ({ isMobile, title, image, Action, mobileHeroImageConfig }) => {
         .section-container--content {
           text-align: center;
         }
+        .title-container--hero h2 {
+          font-size: 48px;
+        }
       }
       @media only screen and (min-width: 974px) {
         .section-container--content {
           display: flex;
         }
-        .title-container {
-          margin: 75px auto;
+        .title-container--hero {
+          {/* margin: 75px auto; */}
+        }
+        .title-container--hero h2 {
+          font-size: 68px;
         }
       }
     `}</style>
-      <div className={`section-container`}>
-        <div className="title-container" style={{ filter: show ? "blur(5px)" : "", transition: "filter 0.3s" }}>
+      <div className={`section-container`} style={{ marginBottom: 0 }}>
+        <div className="title-container title-container--hero" style={{ filter: show ? "blur(5px)" : "", transition: "filter 0.3s" }}>
           <h2>{title}</h2>
         </div>
         <div className="section-container--content" style={isMobile ? { margin: "auto" } : {display: "block"}}>
-          { isMobile ? <MobileContent image={image} show={show} setShow={setShow} Action={Action} mobileHeroImageConfig={mobileHeroImageConfig} /> : <DesktopContent image={image} Action={Action} />}
+          { isMobile ? <MobileContent image={image} show={show} setShow={setShow} Action={Action} mobileHeroImageConfig={mobileHeroImageConfig} actionColor={actionColor} /> : <DesktopContent image={image} Action={Action} />}
         </div>
       </div>
     </div>
@@ -158,8 +167,8 @@ const Circle = ({ indicatorColor }) =>
     }
     .circle-base {
       position: absolute;
-      left: 20px;
-      top: 20px;
+      left: 40px;
+      top: 40px;
       width: 15px;
       height: 15px;
       border-radius: 80px;

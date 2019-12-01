@@ -28,17 +28,20 @@ const AppStyle = () =>
     line-height: 24px;
   }
   .title-container {
-    max-width: 600px;
+    max-width: 720px;
     margin: auto;
   }
   .section {
     display: flex;
+    min-width: 375px;
   }
   .section-container {
     width: 1280px;
     margin: 0 auto;
     text-align: center;
     padding: 0 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   @media only screen and (max-width: 974px) {
@@ -46,7 +49,7 @@ const AppStyle = () =>
       font-size: 28px;
     }
     h2 {
-      font-size: 48px;
+      font-size: 42px;
     }
     h3 {
       font-size: 32px;
@@ -57,10 +60,14 @@ const AppStyle = () =>
       font-size: 28px;
     }
     h2 {
-      font-size: 62px;
+      font-size: 48px;
     }
     h3 {
       font-size: 32px;
+    }
+    .section-container {
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
   }
 `}</style>
@@ -80,7 +87,7 @@ const Index = () => (
     { config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId}/>  }
     <div>
       <Header name={config.appName} icon={config.appIcon} />
-      <Hero isMobile={config.isMobile} {...config.hero} Action={config.action} />
+      <Hero isMobile={config.isMobile} {...config.hero} Action={config.action} actionColor={config.style.actionColor} />
       { config.demonstration.content && <Demonstration {...config.demonstration} /> }
       { config.features.content &&  <Features {...config.features} /> } 
       { config.exit.appear  && <Exit {...config.exit} Action={config.action} /> }

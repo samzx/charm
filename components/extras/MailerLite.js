@@ -28,7 +28,7 @@ const buttonStyle = {
 
 const MailerLite = ({ id, dataCode, content }) => {
 
-  const { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText, buttonBackgroundColor, buttonTextColor } = content
+  const { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText, buttonBackgroundColor, buttonTextColor, actionColor } = content
 
   // Hides form and shows thank you on success.
   useEffect(() => { attachScriptContent(`function ml_webform_success_${id}(){var r=ml_jQuery||jQuery;r(".ml-subscribe-form-${id} .row-success").show(),r(".ml-subscribe-form-${id} .row-form").hide()}`) }, []);
@@ -36,11 +36,11 @@ const MailerLite = ({ id, dataCode, content }) => {
   useEffect(() => { attachScriptSrc('https://static.mailerlite.com/js/w/webforms.min.js') }, []); // append ?v4a60e9ef938a7fa0240ac9ba567062cb if neccessary
 
   return (  
-    <div className="email" style={{ height: 170 }}>
+    <div className="email">
     <style>{`
       .ml-block-form {
         width: fit-content;
-        margin: auto;
+        margin: 20px auto;
         box-shadow: -6px 6px 20px 0px rgba(0,0,0,0.1);
       }
       .primary {
@@ -48,6 +48,13 @@ const MailerLite = ({ id, dataCode, content }) => {
       }
       .loading {
         cursor: wait;
+      }
+      .primary {
+        background: ${buttonBackgroundColor};
+        transition: background 0.3s;
+      }
+      .primary:hover, .loading {
+        background: ${actionColor};
       }
       @media only screen and (max-width: 974px) {
         .ml-block-form {
@@ -89,8 +96,8 @@ const MailerLite = ({ id, dataCode, content }) => {
                 </div>
                 <input type="hidden" name="ml-submit" value="1"/>
                 <div style={buttonContainerStyle} className="ml-form-embedSubmit">
-                  <button style={{...buttonStyle, color: buttonTextColor, background: buttonBackgroundColor }} type="submit" className="primary">{buttonText}</button>
-                  <button disabled="disabled" style={{...buttonStyle, "display":"none", color: buttonTextColor, background: buttonBackgroundColor }} type="button" className="loading">
+                  <button style={{...buttonStyle, color: buttonTextColor }} type="submit" className="primary">{buttonText}</button>
+                  <button disabled="disabled" style={{...buttonStyle, "display":"none", color: buttonTextColor }} type="button" className="loading">
                     <div className="ml-form-embedSubmitLoad">
                       <div>{buttonLoadingText}</div>
                     </div>

@@ -1,14 +1,19 @@
 const Feature = ({title, description, image}) =>
-<div className={"feature-container"}  style={{ flex: 1, marginTop: 0, maxWidth: 280 }}>
+<div className={"feature-container"}  style={{ flex: 1 }}>
   <style>{`
+    .feature-container {
+      max-width: 320px;
+    }
     @media only screen and (max-width: 974px) {
       .feature-container {
         margin: 48px 0px;
+        margin-top: 80px;
       }
     }
     @media only screen and (min-width: 974px) {
       .feature-container {
-        margin: 72px;
+        margin: 36px;
+        margin-top: 36px;
       }
     }
   `}</style>
@@ -22,7 +27,7 @@ const Feature = ({title, description, image}) =>
 const Features = ({ title, content }) =>
 <div className="section" style={{ background: "#0f0f0f", color: "#fefefe" }}>
   <div className="section-container">
-    <div className="title-container">
+    <div className="title-container feature-title-container">
       <h2>{title}</h2>
     </div>
     <style>{`
@@ -30,15 +35,20 @@ const Features = ({ title, content }) =>
         width: fit-content;
         margin: auto;
       }
-      @media only screen and (min-width: 974px) {
+      @media only screen and (min-width: 1280px) {
         .features-container {
           display: flex;
+        }
+      }
+      @media only screen and (max-width: 1280px) {
+        .feature-title-container {
+          max-width: 480px;
         }
       }
     `}</style>
       {
         content.reduce((acc, elem, index) => {
-          const size = content.length % 2 == 0 ? 2 : 3
+          const size = content.length % 2 == 0 && content.length % 3 != 0 ? 2 : 3
           index % size == 0 ? acc.push([elem]) : acc[Math.floor(index / size)].push(elem)
           return acc
         }, [])
