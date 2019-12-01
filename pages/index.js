@@ -77,9 +77,9 @@ const Index = () => (
     <div>
       <Header name={config.appName} />
       <Hero isMobile={config.isMobile} {...config.hero} Action={config.action} />
-      <Demonstration {...config.demonstration} />
-      <Features {...config.features} />
-      <Exit {...config.exit} Action={config.action} />
+      { config.demonstration.content && <Demonstration {...config.demonstration} /> }
+      { config.features.content &&  <Features {...config.features} /> } 
+      { config.exit.appear  && <Exit {...config.exit} Action={config.action} /> }
       <Footer {...config.footer} />
     </div>
   </div>

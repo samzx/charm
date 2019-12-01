@@ -38,7 +38,7 @@ const MailerLite = ({ id, dataCode, content }) => {
   useEffect(() => { attachScriptSrc('https://static.mailerlite.com/js/w/webforms.min.js') }, []); // append ?v4a60e9ef938a7fa0240ac9ba567062cb if neccessary
 
   return (  
-    <div className="email">
+    <div className="email" style={{ height: 170 }}>
     <style>{`
       .ml-block-form {
         width: fit-content;
