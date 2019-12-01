@@ -14,7 +14,7 @@ import config from '../config/appConfig'
 const AppStyle = () =>
 <style jsx="true">{`
   body {
-    background: #fbf4f0;
+    background: ${config.backgroundColor};
     margin: 0;
     font-family: -apple-system,system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
   }
