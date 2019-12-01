@@ -163,6 +163,11 @@ const Circle = ({ indicatorColor }) =>
       z-index: 1000;
       opacity: 1;
     }
+    .circle-fat-finger {
+      background: transparent;
+      padding: 15px;
+      margin: -15px 0 0 -15px;
+    }
     .animated-circle {
       background: ${indicatorColor};
       -webkit-transform: scale(0.8);
@@ -174,6 +179,7 @@ const Circle = ({ indicatorColor }) =>
     }
   `}
   </style>
+  <div className="circle-base circle-fat-finger" />
   <div className="circle-base animated-circle"/>
   <div className="circle-base top-circle"/>
 </div>

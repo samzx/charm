@@ -49,7 +49,7 @@ const AppStyle = () =>
       font-size: 48px;
     }
     h3 {
-      font-size: 24px;
+      font-size: 32px;
     }
   }
   @media only screen and (min-width: 974px) {
