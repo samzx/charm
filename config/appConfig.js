@@ -4,6 +4,7 @@ const config = {
   title: "App Name - Light description",
   // favicon: "https://bouldergyms.com/favicon.png",
   appName: "App Name",
+  appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
   isMobile: true,
   action: MailerLite,
   hero: {

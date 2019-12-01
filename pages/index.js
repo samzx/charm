@@ -75,7 +75,7 @@ const Index = () => (
     <AppStyle/>
     { config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId}/>  }
     <div>
-      <Header name={config.appName} />
+      <Header name={config.appName} icon={config.appIcon} />
       <Hero isMobile={config.isMobile} {...config.hero} Action={config.action} />
       { config.demonstration.content && <Demonstration {...config.demonstration} /> }
       { config.features.content &&  <Features {...config.features} /> } 
