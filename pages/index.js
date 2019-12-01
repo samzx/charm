@@ -71,6 +71,7 @@ const Index = () => (
       <title>{config.title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="shortcut icon" href={config.favicon || "/favicon.ico"} />
+      <link rel="apple-touch-icon" href={config.appIcon} />
       <meta property="og:title"              content={config.title} />
       <meta property="og:description"        content={config.hero.title} />
       <meta property="og:image"              content={config.appIcon} />
