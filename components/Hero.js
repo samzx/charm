@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 // Should be faded out 50%
-const MobileHeroImage = ({ image, setShow, show, indicatorColor }) => {
+const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig }) => {
+  const { indicatorColor, jumpHeight } = mobileHeroImageConfig
   const wrapperRef = useRef();
   const handleClickOutside = (event) => {
     if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -28,7 +29,7 @@ const MobileHeroImage = ({ image, setShow, show, indicatorColor }) => {
           transition: 0.3s transform;
         }
         .hero-image--mobile__show {
-          transform: translate(0px, 50px) scale(0.8);
+          transform: translate(0px, ${300 - jumpHeight}px) scale(0.8);
           transition: 0.3s transform;
         }
         @media only screen and (max-width: 974px) {
@@ -45,8 +46,8 @@ const MobileHeroImage = ({ image, setShow, show, indicatorColor }) => {
           }
         }
       `}</style>
-      <div ref={wrapperRef} className={ `hero-image--mobile ${show ? "hero-image--mobile__show" : ""}` } style={{ backgroundSize: "cover", maxWidth: 375, borderRadius: "20px" }}>
-        <img src={image} style={{ width: "100%" }} />
+      <div ref={wrapperRef} className={ `hero-image--mobile ${show ? "hero-image--mobile__show" : ""}` } style={{ backgroundSize: "cover", maxWidth: 375 }}>
+        <img src={image} style={{ width: "100%", borderRadius: "20px" }} />
         <div onClick={() => setShow(!show)} style={{ cursor: "pointer"}} ><Circle indicatorColor={indicatorColor} /></div>
       </div>
     </div>
@@ -68,7 +69,7 @@ const DesktopContent = ({ image, Action }) =>
   </div>
 </React.Fragment>
 
-const MobileContent = ({ image, setShow, show, Action, indicatorColor }) =>
+const MobileContent = ({ image, setShow, show, Action, mobileHeroImageConfig }) =>
 <React.Fragment>
   <style>{`
   .mail-list--mobile {
@@ -98,14 +99,14 @@ const MobileContent = ({ image, setShow, show, Action, indicatorColor }) =>
     <Action />
   </div>
   <div style={{ flex: 1 }}>
-    { image && <MobileHeroImage image={image} show={show} setShow={setShow} indicatorColor={indicatorColor} /> }
+    { image && <MobileHeroImage image={image} show={show} setShow={setShow} mobileHeroImageConfig={mobileHeroImageConfig} /> }
   </div>
   <div className="mail-list--mobile mail-list--mobile__right" style={{ marginBottom: 100, filter: show ? "blur(5px)" : "" }}>
     <Action />
   </div>
 </React.Fragment>
 
-const Hero = ({ isMobile, title, image, Action, indicatorColor }) => {
+const Hero = ({ isMobile, title, image, Action, mobileHeroImageConfig }) => {
   const [show, setShow] = useState(false);
   return (
     <div className="section" style={{ minHeight: "inherit" }}>
@@ -126,7 +127,7 @@ const Hero = ({ isMobile, title, image, Action, indicatorColor }) => {
           <h2>{title}</h2>
         </div>
         <div className="section-container--content" style={isMobile ? { margin: "auto" } : {display: "block"}}>
-          { isMobile ? <MobileContent image={image} show={show} setShow={setShow} Action={Action} indicatorColor={indicatorColor} /> : <DesktopContent image={image} Action={Action} />}
+          { isMobile ? <MobileContent image={image} show={show} setShow={setShow} Action={Action} mobileHeroImageConfig={mobileHeroImageConfig} /> : <DesktopContent image={image} Action={Action} />}
         </div>
       </div>
     </div>

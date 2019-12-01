@@ -10,7 +10,10 @@ const config = {
   hero: {
     title: "Tell us why your customers need you.",
     image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    indicatorColor: "#0092ff"
+    mobileHeroImageConfig: {
+      indicatorColor: "#0092ff",
+      jumpHeight: "125"
+    }
   },
   demonstration: {
     title: "Show us how you'll deliver value.",
