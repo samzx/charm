@@ -20,7 +20,7 @@ const Feature = ({title, description, image}) =>
 </div>
 
 const Features = ({ title, content }) =>
-<div className="section" style={{ background: "#0f0f0f", color: "white" }}>
+<div className="section" style={{ background: "#0f0f0f", color: "#fefefe" }}>
   <div className="section-container">
     <div className="title-container">
       <h2>{title}</h2>

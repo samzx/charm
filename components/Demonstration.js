@@ -9,7 +9,7 @@ const Section = ({title, description, image}) =>
 </div>
 
 const Demonstration = ({ title, content }) =>
-<div className="section" style={{background: "white"}}>
+<div className="section" style={{background: "#fefefe"}}>
   <div className={"section-container"}>
     <div className="title-container" style={{ textAlign: "left", maxWidth: 720 }}>
       <h2>{title}</h2>

@@ -17,6 +17,7 @@ const AppStyle = () =>
     background: ${config.backgroundColor};
     margin: 0;
     font-family: -apple-system,system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    color: #0f0f0f;
   }
   a {
     color: #fbf4f0;
@@ -26,7 +27,6 @@ const AppStyle = () =>
     font-size: 16px;
     line-height: 24px;
   }
-
   .title-container {
     max-width: 600px;
     margin: auto;

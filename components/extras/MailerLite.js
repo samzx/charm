@@ -7,11 +7,11 @@ const textFieldContainerStyle = {
 
 const textFieldStyle = {
   height: 45,
-  width: 250,
+  width: 244,
   // display: "inline-block",
   margin: 0,
   border: 0,
-  padding: "0 0 0 10px",
+  padding: "0 0 0 16px",
   fontSize: 16
 }
 
@@ -22,8 +22,8 @@ const buttonStyle = {
   height: 45,
   border: "none",
   fontSize: 16,
-  background: "black",
-  color: "white",
+  background: "#0f0f0f",
+  color: "#fefefe",
   padding: "0 20px",
 	appearance: "none"
 }
