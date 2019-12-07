@@ -1,15 +1,15 @@
 import MailerLite from "./extras/MailerLiteConfig"
 
 const config = {
-  title: "App Name - Light description",
+  title: "GameFinder - An app to find board games at cafes",
   favicon: "",
-  appName: "App Name",
+  appName: "GameFinder",
   appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
   isMobile: true,
   action: MailerLite,
   backgroundColor: "#fbf4f0",
   hero: {
-    title: "Tell us why your customers need you.",
+    title: "Because there's nothing available.",
     image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     mobileHeroImageConfig: {
       indicatorColor: "#0092ff",
