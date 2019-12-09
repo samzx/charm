@@ -1,4 +1,5 @@
 import MailerLite from "../../components/extras/MailerLite"
+import config from "../appConfig"
 
 const ConfiguredMailerLite = () => {
     // Configurations
@@ -12,8 +13,10 @@ const ConfiguredMailerLite = () => {
   const successSubtitle = "We're working hard to bring this to you soon."
   const buttonText = 'Subscribe'
   const buttonLoadingText = 'Subscribing'
+  const buttonBackgroundColor = config.style.primaryColor
+  const buttonTextColor = config.style.accentColor
 
-  const content = { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText }
+  const content = { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText, buttonBackgroundColor, buttonTextColor }
 
   return <MailerLite id={id} dataCode={dataCode} content={content} />
 }

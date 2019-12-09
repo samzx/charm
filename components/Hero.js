@@ -21,11 +21,11 @@ const MobileHeroImage = ({ image, setShow, show, mobileHeroImageConfig }) => {
     <div className="mobile-hero-image-container" style={{ overflow: "hidden" }} >
       <style>{`
         .mobile-hero-image-container {
-          margin-top: -367px;
+          margin-top: -350px;
           height: 667px;
         }
         .hero-image--mobile {
-          transform: translate(0px, 367px);
+          transform: translate(0px, 350px);
           transition: 0.3s transform;
         }
         .hero-image--mobile__show {
@@ -121,10 +121,13 @@ const Hero = ({ isMobile, title, image, Action, mobileHeroImageConfig }) => {
         .section-container--content {
           display: flex;
         }
+        .title-container {
+          margin: 75px auto;
+        }
       }
     `}</style>
       <div className={`section-container`}>
-        <div className="title-container" style={{ filter: show ? "blur(5px)" : "", transition: "filter 0.3s"}}>
+        <div className="title-container" style={{ filter: show ? "blur(5px)" : "", transition: "filter 0.3s" }}>
           <h2>{title}</h2>
         </div>
         <div className="section-container--content" style={isMobile ? { margin: "auto" } : {display: "block"}}>
@@ -146,7 +149,7 @@ const Circle = ({ indicatorColor }) =>
         opacity: 0.5; }
 
       50% {
-        transform: scale(1.67);
+        transform: scale(2);
         opacity: 0.5; }
 
       100% {

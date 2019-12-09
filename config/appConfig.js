@@ -7,7 +7,12 @@ const config = {
   appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
   isMobile: true,
   action: MailerLite,
-  backgroundColor: "#fbf4f0",
+  style: {
+    backgroundColor: "#fbf4f0",
+    textColor: "#0f0f0f",
+    primaryColor: "#0f0f0f",
+    accentColor: "#fff"
+  },
   hero: {
     title: "Tell us why your customers need you.",
     image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",

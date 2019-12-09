@@ -22,15 +22,13 @@ const buttonStyle = {
   height: 45,
   border: "none",
   fontSize: 16,
-  background: "#0f0f0f",
-  color: "#fefefe",
   padding: "0 20px",
 	appearance: "none"
 }
 
 const MailerLite = ({ id, dataCode, content }) => {
 
-  const { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText } = content
+  const { title, subtitle, description, successTitle, successSubtitle, buttonText, buttonLoadingText, buttonBackgroundColor, buttonTextColor } = content
 
   // Hides form and shows thank you on success.
   useEffect(() => { attachScriptContent(`function ml_webform_success_${id}(){var r=ml_jQuery||jQuery;r(".ml-subscribe-form-${id} .row-success").show(),r(".ml-subscribe-form-${id} .row-form").hide()}`) }, []);
@@ -91,8 +89,8 @@ const MailerLite = ({ id, dataCode, content }) => {
                 </div>
                 <input type="hidden" name="ml-submit" value="1"/>
                 <div style={buttonContainerStyle} className="ml-form-embedSubmit">
-                  <button style={buttonStyle} type="submit" className="primary">{buttonText}</button>
-                  <button disabled="disabled" style={{...buttonStyle, "display":"none"}} type="button" className="loading">
+                  <button style={{...buttonStyle, color: buttonTextColor, background: buttonBackgroundColor }} type="submit" className="primary">{buttonText}</button>
+                  <button disabled="disabled" style={{...buttonStyle, "display":"none", color: buttonTextColor, background: buttonBackgroundColor }} type="button" className="loading">
                     <div className="ml-form-embedSubmitLoad">
                       <div>{buttonLoadingText}</div>
                     </div>

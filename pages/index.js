@@ -14,13 +14,13 @@ import config from '../config/appConfig'
 const AppStyle = () =>
 <style jsx="true">{`
   body {
-    background: ${config.backgroundColor};
+    background: ${config.style.backgroundColor};
     margin: 0;
     font-family: -apple-system,system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-    color: #0f0f0f;
+    color: ${config.style.textColor};
   }
   a {
-    color: #fbf4f0;
+    color: ${config.style.accentColor};
     text-decoration: none;
   }
   p {
