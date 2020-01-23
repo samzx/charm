@@ -1,4 +1,4 @@
-import MailerLite from "./extras/MailerLiteConfig"
+import AppStore from "./extras/AppStore"
 
 const config = {
   title: "App Name - Light description",
@@ -6,7 +6,7 @@ const config = {
   appName: "App Name",
   appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
   isMobile: true,
-  action: MailerLite,
+  action: AppStore,
   style: {
     backgroundColor: "#fbf4f0",
     textColor: "#0f0f0f",
@@ -16,7 +16,7 @@ const config = {
   },
   hero: {
     title: "Tell us why your customers need you.",
-    image: "https://images.unsplash.com/photo-1575072844623-4a0622204229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    image: "https://res.cloudinary.com/xielabs/image/upload/v1576249323/demo-2x.png",
     mobileHeroImageConfig: {
       jumpHeight: "125"
     }
