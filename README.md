@@ -1,6 +1,6 @@
 # Charm
 
-<img src="https://res.cloudinary.com/xielabs/image/upload/v1575203463/Screen_Shot_2019-12-01_at_11.30.39_pm.png">
+<img src="https://res.cloudinary.com/xielabs/image/upload/v1579749109/charm-image.png">
 
 **Landing page template** build on top of Next JS. Write modular React code. Compiles into light weight static html files that loads blazingly fast.
 
