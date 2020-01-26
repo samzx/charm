@@ -1,12 +1,13 @@
 import AppStore from "./extras/AppStore"
+import MailerLiteConfig from "./extras/MailerLiteConfig"
 
 const config = {
   title: "App Name - Light description",
-  favicon: "",
+  favicon: "https://res.cloudinary.com/xielabs/image/upload/v1580032618/charm-icon.png",
   appName: "App Name",
-  appIcon: "http://pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro--v1.png",
+  appIcon: "https://res.cloudinary.com/xielabs/image/upload/v1580032618/charm-icon.png",
   isMobile: true,
-  action: AppStore,
+  action: MailerLiteConfig,
   style: {
     backgroundColor: "#fbf4f0",
     textColor: "#0f0f0f",
