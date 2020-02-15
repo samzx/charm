@@ -3,8 +3,8 @@ import config from "../appConfig"
 
 const ConfiguredMailerLite = () => {
     // Configurations
-  const id = '1629750' // get this from the form url
-  const dataCode = 'a4n6k1' // get this from the share link
+  const id = '1779982' // get this from the form url
+  const dataCode = 'q6r4p2' // get this from the share link
 
   const title = ''
   const subtitle = "Coming Soon to iOS"
